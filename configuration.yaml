@@ -43,6 +43,13 @@ light:
     optimistic: false
     qos: 0
 
+  - platform: group
+    name: Vardagsrum Taklampa
+    entities:
+      - light.vardagsrummrt_taklampa_1
+      - light.vardagsrummrt_taklampa_2
+      - light.vardagsrummrt_taklampa_3
+
 http:
   # Secrets are defined in the file secrets.yaml
   api_password: !secret http_password
@@ -144,3 +151,14 @@ zone: !include zones.yaml
 
 # Enables a map showing the location of tracked devices
 map:
+
+switch:
+  - platform: command_line
+    switches:
+      kitchen_light:
+        command_on: ping 8.8.8.8
+        command_off: echo 'hi'
+        friendly_name: Test Switch
+
+shell_command:
+  restart_pow: touch ~/.pow/restart.txt

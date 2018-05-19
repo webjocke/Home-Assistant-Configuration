@@ -39,7 +39,34 @@ sabnzbd_card:
 
 server_view:
   view: yes
-  icon: mdi:server
+  name: Server
   entities:
     - group.pihole_card
     - group.sabnzbd_card
+
+bathroom_lights:
+  name: Badrumslampor
+  entities:
+    - light.badrum_handfat
+    - light.badrum_taklampa
+
+hallway_lights:
+  name: Hallampor
+  entities:
+    - light.hall_1
+    - light.hall_2
+
+livingroom_lights:
+  name: Vardagsrumslampor
+  entities:
+    - light.hogra_fonsterlampa
+    - light.vanstra_fonsterlampa
+    - light.vardagsrum_taklampa
+
+lights_view:
+  view: yes
+  name: Lights
+  entities:
+    - group.livingroom_lights
+    - group.hallway_lights
+    - group.bathroom_lights

@@ -1,0 +1,10 @@
+
+example_script:
+  sequence:
+    # This is written using the Script Syntax
+    - service: light.turn_on
+      data:
+        entity_id: light.ceiling
+    - service: notify.notify
+      data:
+        message: 'Turned on the ceiling light!'
