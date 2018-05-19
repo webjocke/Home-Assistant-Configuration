@@ -17,3 +17,4 @@ This is the configuration files for my Home Assistant Smarthome
 - Google Chromecast Audio's
 - Owntracks
 - Z-Stick
+- Raspberry Pi Security Cameras
