@@ -1,0 +1,146 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  latitude: !secret server_lati
+  longitude: !secret server_long
+  elevation: !secret server_elevation
+  unit_system: !secret unit_system
+  time_zone: !secret server_time_zone
+  customize: !include customize.yaml
+
+# Enables the frontend
+frontend:
+
+# Enables configuration UI
+config:
+
+#device_tracker:
+#  - platform: asuswrt
+#    host: 192.168.1.1
+#    username: !secret router_username
+#    password: !secret router_password
+
+#panel_iframe:
+#  router:
+#    title: 'Spotify'
+#    url: 'https://open.spotify.com/browse/featured'
+
+mqtt:  
+  broker: 127.0.0.1
+  port: 1883
+  client_id: HomeAssistant
+  username: default_user
+  password: gdfs234GD7dahaj
+
+light:  
+  - platform: mqtt_json
+    name: "SN1 LED"
+    state_topic: "bruh/sensornode1"
+    command_topic: "bruh/sensornode1/set"
+    brightness: true
+    flash: true
+    rgb: true
+    optimistic: false
+    qos: 0
+
+http:
+  # Secrets are defined in the file secrets.yaml
+  api_password: !secret http_password
+  # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+  # base_url: example.duckdns.org:8123
+
+# Checks for available updates
+# Note: This component will send some information about your system to
+# the developers to assist with development of Home Assistant.
+# For more information, please see:
+# https://home-assistant.io/blog/2016/10/25/explaining-the-updater/
+updater:
+  # Optional, allows Home Assistant developers to focus on popular components.
+  # include_used_components: true
+
+hassio:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+# Enables support for tracking state changes over time
+history:
+
+# View all events in a logbook
+logbook:
+
+# Track the sun
+sun:
+
+# Weather prediction
+sensor:
+  - platform: plex
+    host: !secret plex_host
+    port: !secret plex_port
+    name: !secret plex_name
+    username: !secret plex_username
+    password: !secret plex_password
+    server: !secret plex_server
+    token: !secret plex_token
+
+  - platform: sabnzbd
+    host: !secret sabnzbd_host
+    api_key: !secret sabnzbd_api_key
+    monitored_variables:
+      - 'current_status'
+      - 'speed'
+      - 'queue_size'
+      - 'queue_remaining'
+      - 'disk_size'
+      - 'disk_free'
+      - 'queue_count'
+
+  - platform: socialblade
+    channel_id: UCJtmTHl7WBRXOPto0Po0k6A
+
+  - platform: twitch
+    channels:
+      - WebJocke
+      - ellegamee
+
+  - platform: pi_hole
+
+  - platform: yr
+
+  - platform: mqtt
+    state_topic: "bruh/sensornode1"
+    name: "SN1 Humidity"
+    unit_of_measurement: "%"
+    value_template: '{{ value_json.humidity | round(1) }}'
+  - platform: mqtt
+    state_topic: "bruh/sensornode1"
+    name: "SN1 LDR"
+    ##This sensor is not calibrated to actual LUX. Rather, this a map of the input voltage ranging from 0 - 1023.
+    unit_of_measurement: "LUX"
+    value_template: '{{ value_json.ldr }}'
+  - platform: mqtt
+    state_topic: "bruh/sensornode1"
+    name: "SN1 PIR"
+    value_template: '{{ value_json.motion }}'
+  - platform: mqtt
+    state_topic: "bruh/sensornode1"
+    name: "SN1 Temperature"
+    unit_of_measurement: "°F"
+    value_template: '{{ value_json.temperature | round(1) }}'
+  - platform: mqtt
+    state_topic: "bruh/sensornode1"
+    name: "SN1 Real Feel"
+    unit_of_measurement: "°F"
+    value_template: '{{ value_json.heatIndex | round(1) }}'
+
+# Text to speech
+tts:
+  - platform: google
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+zone: !include zones.yaml
+
+# Enables a map showing the location of tracked devices
+map:

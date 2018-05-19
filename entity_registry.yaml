@@ -1,0 +1,48 @@
+media_player.vardagsrum:
+  name:
+  platform: cast
+  unique_id: 9670c39b-34f1-ff93-c635-ba168a063341
+light.hogra_fonsterlampa:
+  name:
+  platform: hue
+  unique_id: 90:fd:9f:ff:fe:8a:01:42-01
+light.vardagsrummrt_taklampa_2:
+  name:
+  platform: hue
+  unique_id: 00:17:88:01:02:77:b6:64-0b
+light.badrum_handfat:
+  name:
+  platform: hue
+  unique_id: 00:0b:57:ff:fe:ef:cd:97-01
+light.vardagsrummrt_taklampa_3:
+  name:
+  platform: hue
+  unique_id: 00:17:88:01:02:77:70:3c-0b
+light.vanstra_fonsterlampa:
+  name:
+  platform: hue
+  unique_id: 90:fd:9f:ff:fe:8e:f8:39-01
+light.hall_1:
+  name:
+  platform: hue
+  unique_id: 00:0b:57:ff:fe:11:88:9b-01
+light.badrum_taklampa:
+  name:
+  platform: hue
+  unique_id: 00:0b:57:ff:fe:cb:77:6e-01
+light.hall_2:
+  name:
+  platform: hue
+  unique_id: 00:0b:57:ff:fe:11:0a:6b-01
+light.vardagsrummrt_taklampa_1:
+  name:
+  platform: hue
+  unique_id: 00:17:88:01:02:77:80:e7-0b
+light.sovrum_temp_lampa:
+  name:
+  platform: hue
+  unique_id: 00:0b:57:ff:fe:32:2c:df-01
+media_player.chrome:
+  name:
+  platform: plex
+  unique_id: uzzthr7cs39017m8pbbvkmp6

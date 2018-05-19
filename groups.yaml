@@ -1,0 +1,45 @@
+
+sensor_node_1_card:  
+  name: Sensor Node 1  
+  entities:  
+    - sensor.sn1_temperature  
+    - sensor.sn1_humidity  
+    - sensor.sn1_ldr
+    - sensor.sn1_pir
+    - sensor.sn1_real_feel
+    - light.sn1_led
+
+pihole_card:  
+  name: Pi-Hole
+  entities:  
+    - sensor.pihole_ads_blocked_today
+    - sensor.pihole_ads_percentage_blocked_today
+    - sensor.pihole_dns_queries_cached
+    - sensor.pihole_dns_queries_forwarded
+    - sensor.pihole_dns_queries_today
+    - sensor.pihole_dns_unique_clients
+    - sensor.pihole_dns_unique_domains
+    - sensor.pihole_domains_blocked
+
+plex_sensor_card:
+  name: Plex Activity
+  entities:
+    - sensor.my_plex
+
+sabnzbd_card:  
+  name: SabNZBd
+  entities:  
+    - sensor.sabnzbd_status
+    - sensor.sabnzbd_speed
+    - sensor.sabnzbd_queue_count
+    - sensor.sabnzbd_queue
+    - sensor.sabnzbd_left
+    - sensor.sabnzbd_disk_free
+    - sensor.sabnzbd_disk
+
+server_view:
+  view: yes
+  icon: mdi:server
+  entities:
+    - group.pihole_card
+    - group.sabnzbd_card

@@ -1,0 +1,12 @@
+
+- name: Home
+  latitude: !secret home_lati
+  longitude: !secret home_long
+  radius: !secret home_radi
+  icon: mdi:home-assistant
+
+- name: Parents
+  latitude: !secret parents_lati
+  longitude: !secret parents_long
+  radius: !secret parents_radi
+  icon: mdi:account-switch
