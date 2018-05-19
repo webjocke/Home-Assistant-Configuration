@@ -18,5 +18,3 @@ This is the configuration files for my Home Assistant Smarthome
 - Owntracks
 - Z-Stick
 - Raspberry Pi Security Cameras
-
-# Make something great!
