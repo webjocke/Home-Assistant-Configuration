@@ -16,3 +16,4 @@ This is the configuration files for my Home Assistant Smarthome
 - Google Home Mini
 - Google Chromecast Audio's
 - Owntracks
+- Z-Stick
