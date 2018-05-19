@@ -26,11 +26,11 @@ config:
 #    url: 'https://open.spotify.com/browse/featured'
 
 mqtt:  
-  broker: 127.0.0.1
-  port: 1883
-  client_id: HomeAssistant
-  username: default_user
-  password: gdfs234GD7dahaj
+  broker: !secret mqtt_host
+  port: !secret mqtt_port
+  client_id: !secret mqtt_client_id
+  username: !secret mqtt_username
+  password: !secret mqtt_password
 
 light:  
   - platform: mqtt_json
