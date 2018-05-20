@@ -102,14 +102,6 @@ sensor:
       - 'disk_free'
       - 'queue_count'
 
-  - platform: socialblade
-    channel_id: UCJtmTHl7WBRXOPto0Po0k6A
-
-  - platform: twitch
-    channels:
-      - WebJocke
-      - ellegamee
-
   - platform: pi_hole
 
   - platform: yr
@@ -151,14 +143,3 @@ zone: !include zones.yaml
 
 # Enables a map showing the location of tracked devices
 map:
-
-switch:
-  - platform: command_line
-    switches:
-      kitchen_light:
-        command_on: ping 8.8.8.8
-        command_off: echo 'hi'
-        friendly_name: Test Switch
-
-shell_command:
-  restart_pow: touch ~/.pow/restart.txt
